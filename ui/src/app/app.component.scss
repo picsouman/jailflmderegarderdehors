@@ -1,0 +1,10 @@
+nav {
+  li {
+    text-decoration: none;
+    list-style: none;
+
+    a.active {
+      background: red;
+    }
+  }
+}
