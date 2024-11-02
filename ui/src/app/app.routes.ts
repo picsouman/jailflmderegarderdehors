@@ -4,6 +4,8 @@ import {RadarComponent} from "./components/radar/radar.component";
 import {TemsiComponent} from "./components/temsi/temsi.component";
 import {WindyComponent} from "./components/windy/windy.component";
 import {WintemComponent} from "./components/wintem/wintem.component";
+import {slide} from "./core/animations";
+import {SchedulerComponent} from "./components/scheduler/scheduler.component";
 
 export const routes: Routes = [
   {
@@ -11,7 +13,8 @@ export const routes: Routes = [
     component: MetarTafComponent,
     title: 'METAR / TAF',
     data: {
-      DISPLAYED_TIME : 5
+      DISPLAYED_TIME : 5,
+      animation: 'slide'
     }
   },
   {
@@ -19,7 +22,8 @@ export const routes: Routes = [
     component: RadarComponent,
     title: 'Radar',
     data: {
-      DISPLAYED_TIME : 5
+      DISPLAYED_TIME : 5,
+      animation: 'slide'
     }
   },
   {
@@ -27,15 +31,8 @@ export const routes: Routes = [
     component: TemsiComponent,
     title: 'TEMSI',
     data: {
-      DISPLAYED_TIME : 5
-    }
-  },
-  {
-    path: 'windy',
-    component: WindyComponent,
-    title: 'Windy',
-    data: {
-      DISPLAYED_TIME : 5
+      DISPLAYED_TIME : 5,
+      animation: 'slide'
     }
   },
   {
@@ -43,7 +40,26 @@ export const routes: Routes = [
     component: WintemComponent,
     title: 'Wintem',
     data: {
-      DISPLAYED_TIME : 5
+      DISPLAYED_TIME : 5,
+      animation: 'slide'
+    }
+  },
+  {
+    path: 'windy',
+    component: WindyComponent,
+    title: 'Windy',
+    data: {
+      DISPLAYED_TIME : 5,
+      animation: 'slide'
+    }
+  },
+  {
+    path: 'scheduler',
+    component: SchedulerComponent,
+    title: 'Planning',
+    data: {
+      DISPLAYED_TIME : 5,
+      animation: 'slide'
     }
   },
   {

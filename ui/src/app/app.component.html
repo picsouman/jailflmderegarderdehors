@@ -1,25 +1,15 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Document</title>
-</head>
-<body>
+<nav>
+  <ol>
+    @for(route of routes; track route) {
+      <li>
+        <a [routerLink]="route.path" routerLinkActive="active">
+          {{route.title}}
+        </a>
+      </li>
+    }
+  </ol>
+</nav>
 
-  <nav>
-    <ol>
-      @for(route of routes; track route) {
-        <li>
-          <a [routerLink]="route.path" routerLinkActive="active">
-            {{route.title}}
-          </a>
-        </li>
-      }
-    </ol>
-  </nav>
-
-
+<div id="main">
   <router-outlet />
-</body>
-</html>
+</div>
