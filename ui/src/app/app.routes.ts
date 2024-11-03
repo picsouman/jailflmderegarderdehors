@@ -13,7 +13,7 @@ export const routes: Routes = [
     component: MetarTafComponent,
     title: 'METAR / TAF',
     data: {
-      DISPLAYED_TIME : 5,
+      DISPLAYED_TIME : 10,
       animation: 'slide'
     }
   },
@@ -40,7 +40,7 @@ export const routes: Routes = [
     component: WintemComponent,
     title: 'Wintem',
     data: {
-      DISPLAYED_TIME : 5,
+      DISPLAYED_TIME : 7,
       animation: 'slide'
     }
   },
@@ -49,7 +49,7 @@ export const routes: Routes = [
     component: WindyComponent,
     title: 'Windy',
     data: {
-      DISPLAYED_TIME : 5,
+      DISPLAYED_TIME : 10,
       animation: 'slide'
     }
   },
@@ -58,7 +58,7 @@ export const routes: Routes = [
     component: SchedulerComponent,
     title: 'Planning',
     data: {
-      DISPLAYED_TIME : 5,
+      DISPLAYED_TIME : 10,
       animation: 'slide'
     }
   },
