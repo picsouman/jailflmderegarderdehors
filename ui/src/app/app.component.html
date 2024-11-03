@@ -1,15 +1,21 @@
-<nav>
-  <ol>
-    @for(route of routes; track route) {
+<div id="viewport" [class]="viewportBgClass()">
+  <nav>
+    <ol>
       <li>
-        <a [routerLink]="route.path" routerLinkActive="active">
-          {{route.title}}
-        </a>
+        <img src="./assets/images/logos/logo_tev_187x125.png"/>
       </li>
-    }
-  </ol>
-</nav>
+      @for(route of routes; track route) {
+        <li>
+          <a [routerLink]="route.path" routerLinkActive="active">
+            {{route.title}}
+          </a>
+        </li>
+      }
+    </ol>
+  </nav>
 
-<div id="main">
-  <router-outlet />
+  <div id="main">
+    <router-outlet />
+  </div>
+
 </div>

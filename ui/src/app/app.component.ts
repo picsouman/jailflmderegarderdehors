@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, signal} from '@angular/core';
 import {
   Router,
   RouterLink,
@@ -6,7 +6,7 @@ import {
   RouterOutlet,
   Routes,
 } from '@angular/router';
-import {DISPLAYED_TIME} from "./shared/keys";
+import {DISPLAYED_TIME, ViewportBackground} from "./shared/keys";
 import {slide} from "./core/animations";
 
 @Component({
@@ -21,7 +21,9 @@ import {slide} from "./core/animations";
 })
 export class AppComponent implements OnInit {
   readonly routes: Routes
-  displayedRouteIndex: number = 0
+  viewportBgClass = signal<ViewportBackground>("bg-final")
+
+  private displayedRouteIndex: number = 0
 
   constructor(
     private readonly router: Router,
@@ -34,11 +36,13 @@ export class AppComponent implements OnInit {
   }
 
   initializeNextSwitch() {
-    const delayInSecond = this.routes[this.displayedRouteIndex].data![DISPLAYED_TIME] ?? 5
+    const delayInSecond = this.routes[this.displayedRouteIndex].data!['displayedTime'] ?? 5
     this.displayedRouteIndex = (this.displayedRouteIndex + 1) % this.routes.length
 
     setTimeout(() => {
       this.router.navigateByUrl(this.routes[this.displayedRouteIndex].path ?? '/')
+      const backgroundClass: ViewportBackground = this.routes[this.displayedRouteIndex].data!['background'] as ViewportBackground ?? 'bg-final'
+      this.viewportBgClass.set(backgroundClass)
       this.initializeNextSwitch()
     }, delayInSecond * 1000)
   }
