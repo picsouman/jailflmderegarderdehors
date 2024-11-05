@@ -4,7 +4,7 @@ const app = express()
 const path = require('path');
 const port = 3000
 
-app.use(express.static('ui'))
+app.use(express.static('browser'))
 app.use('/weather', createProxyMiddleware({
     target: 'https://aviationweather.gov',
     changeOrigin: true,
